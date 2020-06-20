@@ -1,26 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [profileUrl, setProfileUrl] = useState('')
+
+    return (
+        <div className="App">
+            <div className="main">
+                Paste your linkedin profile url below to begin:
+                <input type="text" value={profileUrl} onChange={(e) => setProfileUrl(e.target.value)} />
+            </div>
+            
+        </div>
+    );
 }
 
 export default App;
